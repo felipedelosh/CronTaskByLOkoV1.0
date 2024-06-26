@@ -36,7 +36,13 @@ def saveInfoInLOGFile(status,info):
         pass
 
     with open("log.log", "w") as f: # Save
-            data = f"{status} - {date.today()} - {info}\n"
+            data = ""
+
+            if _previous_log_info != "":
+                data = _previous_log_info + f"{status} - {date.today()} - {info}\n"
+            else:
+                data = f"{status} - {date.today()} - {info}\n"
+                
             f.write(data)
 
 
@@ -45,6 +51,7 @@ def executeCODE(script):
 
     if not _isLoad:
         saveInfoInLOGFile("ERROR:FILE", script)
+        return
 
     # Execute script
     try:
