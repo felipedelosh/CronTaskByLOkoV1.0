@@ -56,6 +56,7 @@ def executeCODE(script):
     # Execute script
     try:
         exec(_SCRIPTS_[script])
+        saveInfoInLOGFile("RUN:CODE", script)
     except Exception as e:
         _err = str(e).replace("\n", "   ")
         saveInfoInLOGFile("ERROR:EXECUTE-SCRIPT", _err)
@@ -64,6 +65,7 @@ def executeCODE(script):
 # Register all Task Here
 schedule.every(1).seconds.do(lambda : executeCODE("test_dict_error")) # Testing if program run if taskcode fail.
 schedule.every(1).seconds.do(lambda : executeCODE("Task/exampleEverySecondTask.py")) # Run every second
+schedule.every(1).seconds.do(lambda : executeCODE("Task/emptyTaskCode.py")) # The program run if send empty code.
 
 # END to register
 
