@@ -24,11 +24,15 @@ RUN main.py<br>
 
 ## About the time to execute scripts
 
-It´s based in library "Schelude" of python 
+It´s based in library "Schelude" of python https://schedule.readthedocs.io/
+<br>
+you only need to undertands the time logic for example:
+<br>
+if you need execute a script every 15 minutes use schedule.every(1).minutes.do(lambda : method_to_call())
 
 ## To register python file
 
-ABC
+OPEN the file "main.py" and search registration. and put the frecuency of execute a task.
 
 ## :hammer_and_wrench:Tech.
 
