@@ -50,22 +50,24 @@ def executeCODE(script):
     _isLoad = script in _SCRIPTS_.keys()
 
     if not _isLoad:
-        saveInfoInLOGFile("ERROR:FILE", script)
+        saveInfoInLOGFile("ERROR:REGISTRATION", script)
         return
 
     # Execute script
     try:
         exec(_SCRIPTS_[script])
-        saveInfoInLOGFile("RUN:CODE", script)
+        saveInfoInLOGFile("CODE:EXECUTE-SCRIPT-OK", script)
     except Exception as e:
         _err = str(e).replace("\n", "   ")
-        saveInfoInLOGFile("ERROR:EXECUTE-SCRIPT", _err)
+        saveInfoInLOGFile("FAILED:EXECUTE-SCRIPT", _err)
 
 
 # Register all Task Here
 schedule.every(1).seconds.do(lambda : executeCODE("test_dict_error")) # Testing if program run if taskcode fail.
 schedule.every(1).seconds.do(lambda : executeCODE("Task/exampleEverySecondTask.py")) # Run every second
 schedule.every(1).seconds.do(lambda : executeCODE("Task/emptyTaskCode.py")) # The program run if send empty code.
+schedule.every(1).minutes.do(lambda : executeCODE("Task/exampleEveryMinuteTask.py")) # The program write a file every minute
+
 
 # END to register
 
