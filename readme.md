@@ -9,7 +9,7 @@ This program is cretate to execute Task in time lapses. If you need execute a py
 
 ## :hammer:Funtions:
 
-- `Function 1`: Automatic load all Scripts .py files in folder Task<br>
+- `Function 1`: Automatic load all scripts.py files in folder Task<br>
 - `Function 2`: You register a frecuency to execute every script in Task folder<br>
 - `Function 3`: LOG system for every event in execute task folder<br>
 
@@ -41,7 +41,7 @@ OPEN the file "main.py" and search registration. and put the frecuency of execut
 
 ## :warning:Warning.
 
-- limitations.
+- every python file in the folder task be single archive, NOT support another subclass files.
 
 ## Autor
 
