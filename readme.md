@@ -39,6 +39,17 @@ OPEN the file "main.py" and search registration. and put the frecuency of execut
 - python
 - Schelude
 
+
+## Architecture
+
+```
+PROJECT
+    Task
+        files.py
+    main.py
+    requirements.txt
+```
+
 ## :warning:Warning.
 
 - every python file in the folder task be single archive, NOT support another subclass files.
