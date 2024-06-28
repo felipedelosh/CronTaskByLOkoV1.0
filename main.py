@@ -73,7 +73,7 @@ def executeCODE(script):
     # Execute script
     try:
         exec(_SCRIPTS_[script])
-        saveInfoInLOGFile("CODE:EXECUTE-SCRIPT-OK", script)
+        saveInfoInLOGFile("OK:EXECUTE-SCRIPT", script)
     except Exception as e:
         _err = str(e).replace("\n", "   ")
         saveInfoInLOGFile("FAILED:EXECUTE-SCRIPT", _err)
