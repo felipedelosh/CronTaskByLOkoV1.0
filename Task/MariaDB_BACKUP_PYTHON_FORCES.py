@@ -13,10 +13,10 @@ NOTE: you need install mysql conector: pip install mysql-connector-python
 """
 import mysql.connector
 import os
-from datetime import datetime
+import datetime
 
 def getFormatedTime():
-    date = datetime.now()
+    date = datetime.datetime.now()
     return f"{date.year}-{date.month}-{date.day}-{date.hour}.{date.minute}.{date.second}"
 
 def eraseStrangerCharacters(txt):
