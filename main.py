@@ -13,6 +13,7 @@ from croniter import croniter
 import datetime
 import time
 from os import scandir
+import subprocess
 
 
 def saveInfoInLOGFile(status, info):
@@ -72,7 +73,10 @@ def executeCODE(script):
 
     # Execute script
     try:
-        exec(_SCRIPTS_[script])
+        # exec(_SCRIPTS_[script]) # It´s so poor for complex process
+        result = subprocess.run(["python", "-c", _SCRIPTS_[script]], capture_output=True, text=True)
+        #print(result.stdout)
+        #print(result.stderr)
         saveInfoInLOGFile("OK:EXECUTE-SCRIPT", script)
     except Exception as e:
         _err = str(e).replace("\n", "   ")
